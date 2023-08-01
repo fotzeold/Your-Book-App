@@ -24,15 +24,15 @@ body{
 
 @keyframes bounce {
 	0% {
-		transform: rotate(30deg);
+		transform: scale(1.2);
 	}
 
 	40% {
-		transform: rotate(-60deg);
+		transform: scale(0.8);
 	}
 
 	80% {
-		transform: rotate(30deg);
+		transform: scale(1);
 
 	}
 }

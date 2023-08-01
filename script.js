@@ -49,12 +49,8 @@ function getInfoUi() {
 }
 
 wrapper.forEach(area => {
-	area.addEventListener("mousemove", () => {
-		saveInfoUi();
-	})
-
 	area.addEventListener("click", (event) => {
-		if (event.target.tagName === 'BUTTON') {
+		if (event.target.className === 'deleted') {
 			event.target.parentNode.remove();
 			saveInfoUi();
 		}
@@ -74,19 +70,28 @@ getInfoUi();
 new Sortable(task, {
 	group: 'shared',
 	animation: 350,
-	ghostClass: 'blue-background-class'
+	ghostClass: 'blue-background-class',
+	onSort: function () {
+		saveInfoUi();
+	}
 })
 
 new Sortable(paused, {
 	group: 'shared',
 	animation: 350,
-	ghostClass: 'blue-background-class'
+	ghostClass: 'blue-background-class',
+	onSort: function () {
+		saveInfoUi();
+	}
 })
 
 new Sortable(finished, {
 	group: 'shared',
 	animation: 350,
-	ghostClass: 'blue-background-class'
+	ghostClass: 'blue-background-class',
+	onSort: function () {
+		saveInfoUi();
+	}
 })
 
 
